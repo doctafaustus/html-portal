@@ -5,6 +5,7 @@ This demo showcases Chrome's experimental `<portal>` element which functions ver
 
 This demo shows a simple list of webcomics. Each comic has a preview hero image and upon mousing over the section, a portal of the the webcomic page will load and display inline. A user can then click the portal to be taken immediately to the new page with it already preloaded.
 
+<img src="https://github.com/doctafaustus/html-portal/blob/preview-gif/chrome_1sXGgQBBtJ.gif?raw=true">
 
 ## Prerequisites
 You must be using Chrome and have the following flags enabled at `about://flags/#enable-portals`:
