@@ -1,0 +1,68 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Portal Demo</h1>
+  
+  <h2>Best Webcomics</h2>
+  <ol>
+    <li>
+      <h3>The Oatmeal</h3>
+      <div class="comic-container" data-src="https://theoatmeal.com/comics/forbidden_love#comic">
+        <img src="https://s3.amazonaws.com/theoatmeal-img/thumbnails/forbidden_love_big.png">
+        <img class="spinner" src="https://i.ibb.co/vj863Km/spinner.gif">
+        <portal src=""></portal>
+      </div>
+    </li>
+
+    <li>
+      <h3>Business Cat</h3>
+      <div class="comic-container" data-src="https://www.businesscatcomic.com/comic/pitch/#comic-wrap">
+        <img src="https://static.tvtropes.org/pmwiki/pub/images/business_cat_title.jpg">
+        <img class="spinner" src="https://i.ibb.co/vj863Km/spinner.gif">
+        <portal src=""></portal>
+      </div>
+    </li>
+
+    <li>
+      <h3>Cyanide and Happiness</h3>
+      <div class="comic-container" data-src="https://explosm.net/comics/final-test#comic">
+        <img src="https://i.ytimg.com/vi/koyzBmvaRFk/maxresdefault.jpg">
+        <img class="spinner" src="https://i.ibb.co/vj863Km/spinner.gif">
+        <portal src=""></portal>
+      </div>
+    </li>
+  </ol>
+
+  <script>
+    const blocks = document.querySelectorAll('.comic-container');
+    blocks.forEach(block => {
+      block.addEventListener('mouseenter', e => {
+        block.classList.add('hover');
+        const portal = block.querySelector('portal');
+        const { src } = block.dataset;
+        portal.src = src;
+      });
+
+      block.addEventListener('mouseleave', () => {
+        const portal = block.querySelector('portal');
+        portal.src = '';
+        block.classList.remove('hover');
+        portal.classList.remove('show-portal');
+      });
+    });
+
+    const portals = document.querySelectorAll('portal');
+    portals.forEach(portal => {
+      portal.addEventListener('load', e => {
+        if (portal.closest('.comic-container').matches('.hover')) {
+          portal.classList.add('show-portal');
+        } 
+      });
+    });
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+ol {
+  padding-left: 16px;
+}
+
+img {
+  width: 300px;
+}
+
+.spinner {
+  position: absolute;
+  width: 30px;
+  mix-blend-mode: color-burn;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .3s; 
+}
+
+.comic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.comic-container:hover .spinner {
+  opacity: 1;
+}
+
+portal {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  border: solid 1px black;
+  height: 167px;
+  opacity: 0;
+  box-shadow: 6px 4px 9px 1px #0000002e;
+  width: 300px;
+  transition: all .4s; 
+}
+
+portal:hover {
+  cursor: pointer;
+}
+
+portal.show-portal {
+  opacity: 1;
+  visibility: visible;
+}
